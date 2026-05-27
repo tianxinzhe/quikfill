@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QuickFill</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div id="ad-container"></div>
+  
+  <div class="header">
+    <h1>QuickFill</h1>
+    <div class="header-actions">
+      <button id="add-btn-top" title="添加卡片">+</button>
+      <button id="export-btn" title="导出数据">📥</button>
+      <button id="import-btn" title="导入数据">📤</button>
+    </div>
+  </div>
+
+  <div class="category-tabs">
+    <button class="category-tab active" data-category="all">全部</button>
+    <button class="category-tab" data-category="uncategorized">未分类</button>
+    <button class="category-tab add-category" id="add-category-btn" title="添加分类">+</button>
+  </div>
+
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="搜索卡片...">
+  </div>
+
+  <div id="card-list" class="card-list">
+    <div class="empty-state">
+      <p>暂无卡片</p>
+      <p>右键网页文本可快速收藏</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <button id="add-btn" title="添加卡片">+</button>
+
+  <input type="file" id="file-input" style="display: none;" accept=".json">
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
