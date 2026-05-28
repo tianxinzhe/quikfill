@@ -29,15 +29,28 @@ async function loadAd() {
   const adContainer = document.getElementById('ad-container');
   if (!adContainer) return;
 
-  adContainer.innerHTML = `
-    <div style="padding: 8px 12px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <span style="color: #666; font-size: 12px;">📢</span>
-      <a href="#" style="color: #667eea; font-size: 12px; text-decoration: none;" onclick="event.preventDefault();">
-        支持 QuickFill → 解锁更多功能
-      </a>
-    </div>
-  `;
-  adContainer.style.display = 'block';
+  try {
+    const { createManagedRefreshableAd } = await import('@playanext/playa-yield-sdk');
+    
+    await createManagedRefreshableAd({
+      container: '#ad-container',
+      placement: 'sidepanel',
+      size: { width: 320, height: 50 }
+    });
+    
+    adContainer.style.display = 'block';
+  } catch (err) {
+    console.error('[QuickFill] PlayaYield SDK 加载失败:', err.message);
+    adContainer.innerHTML = `
+      <div style="padding: 8px 12px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span style="color: #666; font-size: 12px;">📢</span>
+        <a href="#" style="color: #667eea; font-size: 12px; text-decoration: none;" onclick="event.preventDefault();">
+          支持 QuickFill → 解锁更多功能
+        </a>
+      </div>
+    `;
+    adContainer.style.display = 'block';
+  }
 }
 
 async function loadCategories() {

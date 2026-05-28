@@ -1,0 +1,276 @@
+export interface Language {
+  code: string;
+  name: string;
+  nativeName: string;
+}
+
+export const LANGUAGES: Language[] = [
+  { code: 'zh_CN', name: 'Chinese', nativeName: '中文' },
+  { code: 'en', name: 'English', nativeName: 'English' },
+  { code: 'ja', name: 'Japanese', nativeName: '日本語' },
+  { code: 'ko', name: 'Korean', nativeName: '한국어' }
+];
+
+const STORAGE_KEY = 'quickfill_language';
+
+export async function getStoredLanguage(): Promise<string | null> {
+  return new Promise((resolve) => {
+    chrome.storage.local.get(STORAGE_KEY, (result) => {
+      const value = result[STORAGE_KEY];
+      resolve(value ? String(value) : null);
+    });
+  });
+}
+
+export async function setStoredLanguage(lang: string): Promise<void> {
+  return new Promise((resolve) => {
+    chrome.storage.local.set({ [STORAGE_KEY]: lang }, resolve);
+  });
+}
+
+let currentLang: string | null = null;
+
+export async function initLanguage(): Promise<void> {
+  const stored = await getStoredLanguage();
+  currentLang = stored || chrome.i18n.getMessage('@@ui_locale') || 'zh_CN';
+}
+
+export function getCurrentLanguage(): string {
+  return currentLang || 'zh_CN';
+}
+
+export function t(key: string, substitutions?: string | string[]): string {
+  if (currentLang && currentLang !== chrome.i18n.getMessage('@@ui_locale')) {
+    const langData = getLangData(currentLang);
+    if (langData && langData[key]) {
+      let message = langData[key];
+      if (substitutions) {
+        if (Array.isArray(substitutions)) {
+          substitutions.forEach((sub, index) => {
+            message = message.replace(new RegExp(`\\$${index + 1}`, 'g'), sub);
+          });
+        } else {
+          message = message.replace(/\$1/g, substitutions);
+        }
+      }
+      return message;
+    }
+  }
+  return chrome.i18n.getMessage(key, substitutions) || key;
+}
+
+function getLangData(lang: string): Record<string, string> | null {
+  try {
+    const langData: Record<string, Record<string, string>> = {
+      'zh_CN': {
+        'extensionName': '快填助手',
+        'extensionDescription': '绝对隐私、纯本地运行、可视化文本管理的 Chrome 侧边栏快捷文本填充工具',
+        'cmdToggleDescription': '打开/关闭 QuickFill 侧边栏',
+        'actionDefaultTitle': 'QuickFill',
+        'btnAddCard': '添加',
+        'btnExport': '导出数据',
+        'btnImport': '导入数据',
+        'btnLanguage': '切换语言',
+        'categoryAll': '全部',
+        'categoryUncategorized': '未分类',
+        'categoryAdd': '添加分类',
+        'searchPlaceholder': '搜索文本...',
+        'emptyStateNoCards': '暂无文本',
+        'emptyStateHint': '右键网页文本可快速收藏',
+        'toastClipboardSuccess': '已写入剪贴板，请 Ctrl+V',
+        'promptCategoryName': '请输入分类名称（最多5字符）：',
+        'alertCategoryNameTooLong': '分类名称不能超过5个字符',
+        'alertCannotDeleteDefault': '无法删除默认分类',
+        'modalAddTitle': '添加文本',
+        'modalEditTitle': '编辑文本',
+        'textareaPlaceholder': '输入文本内容...',
+        'btnSave': '保存',
+        'btnUpdate': '更新',
+        'btnCancel': '取消',
+        'btnConfirm': '确认',
+        'btnConfirmSave': '确认收藏',
+        'categoryNone': '无分类',
+        'selectCategories': '选择分类（可多选）：',
+        'confirmDeleteCard': '确定删除此文本？',
+        'confirmDeleteCategory': '确定删除此分类？',
+        'confirmBatchDelete': '确定删除选中的 {count} 条文本？',
+        'selectAll': '全选',
+        'btnBatchDelete': '批量删除',
+        'btnEditMode': '编辑',
+        'btnCancelEdit': '取消',
+        'alertInvalidBackup': '无效的备份文件',
+        'alertImportOverwrite': '是否覆盖现有数据？\n确定=覆盖，取消=追加合并',
+        'alertImportSuccess': '导入成功',
+        'alertImportFailed': '文件解析失败',
+        'contextMenuSave': '📥 收藏到 QuickFill',
+        'contextMenuSaveFull': '📥 收藏到 QuickFill',
+        'pickerPreview': '预览：',
+        'adSupportLabel': '支持 QuickFill → 解锁更多功能',
+        'langChinese': '中文',
+        'langEnglish': 'English',
+        'langJapanese': '日本語',
+        'langKorean': '한국어',
+        'footerContact': '需要新功能？联系我：',
+        'btnHelp': '使用帮助',
+        'firstUseGuide': '欢迎使用 QuickFill！是否查看帮助页面了解如何使用？'
+      },
+      'en': {
+        'extensionName': 'QuickFill',
+        'extensionDescription': 'Absolutely private, purely local, visual text-based Chrome sidebar for quick text filling',
+        'cmdToggleDescription': 'Open/Close QuickFill sidebar',
+        'actionDefaultTitle': 'QuickFill',
+        'btnAddCard': 'Add',
+        'btnExport': 'Export',
+        'btnImport': 'Import',
+        'btnLanguage': 'Change Language',
+        'categoryAll': 'All',
+        'categoryUncategorized': 'Uncategorized',
+        'categoryAdd': 'Add Category',
+        'searchPlaceholder': 'Search text...',
+        'emptyStateNoCards': 'No text yet',
+        'emptyStateHint': 'Right-click web text to quickly save',
+        'toastClipboardSuccess': 'Copied to clipboard, Ctrl+V to paste',
+        'promptCategoryName': 'Enter category name (max 5 chars):',
+        'alertCategoryNameTooLong': 'Category name cannot exceed 5 characters',
+        'alertCannotDeleteDefault': 'Cannot delete default category',
+        'modalAddTitle': 'Add Text',
+        'modalEditTitle': 'Edit Text',
+        'textareaPlaceholder': 'Enter text content...',
+        'btnSave': 'Save',
+        'btnUpdate': 'Update',
+        'btnCancel': 'Cancel',
+        'btnConfirm': 'Confirm',
+        'btnConfirmSave': 'Confirm Save',
+        'categoryNone': 'None',
+        'selectCategories': 'Select categories (multiple):',
+        'confirmDeleteCard': 'Delete this text?',
+        'confirmDeleteCategory': 'Delete this category?',
+        'confirmBatchDelete': 'Delete selected {count} items?',
+        'selectAll': 'Select All',
+        'btnBatchDelete': 'Delete',
+        'btnEditMode': 'Edit',
+        'btnCancelEdit': 'Cancel',
+        'alertInvalidBackup': 'Invalid backup file',
+        'alertImportOverwrite': 'Overwrite existing data?\nOK=overwrite, Cancel=merge',
+        'alertImportSuccess': 'Import successful',
+        'alertImportFailed': 'File parsing failed',
+        'contextMenuSave': '📥 Save to QuickFill',
+        'contextMenuSaveFull': '📥 Save to QuickFill',
+        'pickerPreview': 'Preview:',
+        'adSupportLabel': 'Support QuickFill → Unlock more features',
+        'langChinese': '中文',
+        'langEnglish': 'English',
+        'langJapanese': '日本語',
+        'langKorean': '한국어',
+        'footerContact': 'Need new features? Contact me:',
+        'btnHelp': 'Help',
+        'firstUseGuide': 'Welcome to QuickFill! Would you like to view the help page to learn how to use it?'
+      },
+      'ja': {
+        'extensionName': 'クイックフィル',
+        'extensionDescription': '完全にプライベート、ローカル動作、ビジュアルカード操作のChromeサイドバー高速テキスト入力ツール',
+        'cmdToggleDescription': 'QuickFillサイドバーで開く/閉じる',
+        'actionDefaultTitle': 'QuickFill',
+        'btnAddCard': '追加',
+        'btnExport': 'エクスポート',
+        'btnImport': 'インポート',
+        'categoryAll': 'すべて',
+        'categoryUncategorized': '未分類',
+        'categoryAdd': '分類追加',
+        'searchPlaceholder': 'カード検索...',
+        'emptyStateNoCards': 'カードがありません',
+        'emptyStateHint': 'Webテキストを右クリックで簡単保存',
+        'toastClipboardSuccess': 'クリップボードにコピー、Ctrl+Vで貼り付け',
+        'promptCategoryName': '分類名を入力（最大10文字）：',
+        'alertCategoryNameTooLong': '分類名は10文字以内にしてください',
+        'alertCannotDeleteDefault': 'デフォルト分類は削除できません',
+        'modalAddTitle': 'カード追加',
+        'modalEditTitle': 'カード編集',
+        'textareaPlaceholder': 'テキスト内容入力...',
+        'btnSave': '保存',
+        'btnUpdate': '更新',
+        'btnCancel': 'キャンセル',
+        'btnConfirm': '確認',
+        'btnConfirmSave': '保存確認',
+        'categoryNone': '分類なし',
+        'selectCategories': '分類を選択（複数可）：',
+        'confirmDeleteCard': 'このカードを削除しますか？',
+        'confirmDeleteCategory': 'この分類を削除しますか？',
+        'confirmBatchDelete': '選択した {count} 件を削除しますか？',
+        'selectAll': '全て選択',
+        'btnBatchDelete': '削除',
+        'btnEditMode': '編集',
+        'btnCancelEdit': 'キャンセル',
+        'alertInvalidBackup': '無効なバックアップファイル',
+        'alertImportOverwrite': '既存データを上書きしますか？\nOK=上書き、キャンセル=マージ',
+        'alertImportSuccess': 'インポート成功',
+        'alertImportFailed': 'ファイル解析失敗',
+        'contextMenuSave': '📥 QuickFillに保存',
+        'contextMenuSaveFull': '📥 QuickFillに保存',
+        'pickerPreview': 'プレビュー：',
+        'adSupportLabel': 'QuickFillをサポート → もっと機能解脱',
+        'langChinese': '中文',
+        'langEnglish': 'English',
+        'langJapanese': '日本語',
+        'langKorean': '한국어',
+        'footerContact': '新機能が必要？連絡先：',
+        'btnHelp': 'ヘルプ',
+        'firstUseGuide': 'QuickFillへようこそ！使い方を学ぶためにヘルプページを表示しますか？'
+      },
+      'ko': {
+        'extensionName': '퀵필',
+        'extensionDescription': '완전한 프라이버시, 로컬 전용, 비주얼 카드操作的 Chrome 사이드바 빠른 텍스트 입력 도구',
+        'cmdToggleDescription': 'QuickFill 사이드바 열기/닫기',
+        'actionDefaultTitle': 'QuickFill',
+        'btnAddCard': '추가',
+        'btnExport': '내보내기',
+        'btnImport': '가져오기',
+        'categoryAll': '전체',
+        'categoryUncategorized': '미분류',
+        'categoryAdd': '분류 추가',
+        'searchPlaceholder': '카드 검색...',
+        'emptyStateNoCards': '카드 없음',
+        'emptyStateHint': '웹 텍스트 우클릭으로 빠르게 저장',
+        'toastClipboardSuccess': '클립보드에 복사됨, Ctrl+V로 붙여넣기',
+        'promptCategoryName': '분류 이름 입력 (최대 10자)：',
+        'alertCategoryNameTooLong': '분류 이름은 10자를 초과할 수 없습니다',
+        'alertCannotDeleteDefault': '기본 분류는 삭제할 수 없습니다',
+        'modalAddTitle': '카드 추가',
+        'modalEditTitle': '카드 편집',
+        'textareaPlaceholder': '텍스트 내용 입력...',
+        'btnSave': '저장',
+        'btnUpdate': '수정',
+        'btnCancel': '취소',
+        'btnConfirm': '확인',
+        'btnConfirmSave': '저장 확인',
+        'categoryNone': '분류 없음',
+        'selectCategories': '분류 선택 (여러 개 가능)：',
+        'confirmDeleteCard': '이 카드를 삭제하시겠습니까？',
+        'confirmDeleteCategory': '이 분류를 삭제하시겠습니까？',
+        'confirmBatchDelete': '선택한 {count} 개를 삭제하시겠습니까？',
+        'selectAll': '전체 선택',
+        'btnBatchDelete': '삭제',
+        'btnEditMode': '편집',
+        'btnCancelEdit': '취소',
+        'alertInvalidBackup': '유효하지 않은 백업 파일',
+        'alertImportOverwrite': '기존 데이터를 덮어쓰시겠습니까？\n확인=덮어쓰기, 취소=병합',
+        'alertImportSuccess': '가져오기 성공',
+        'alertImportFailed': '파일 파싱 실패',
+        'contextMenuSave': '📥 QuickFill에 저장',
+        'contextMenuSaveFull': '📥 QuickFill에 저장',
+        'pickerPreview': '미리보기：',
+        'adSupportLabel': 'QuickFill 지원 → 더 많은 기능 잠금 해제',
+        'langChinese': '中文',
+        'langEnglish': 'English',
+        'langJapanese': '日本語',
+        'langKorean': '한국어',
+        'footerContact': '새 기능이 필요하신가요? 연락처:',
+        'btnHelp': '도움말',
+        'firstUseGuide': 'QuickFill에 오신 것을 환영합니다! 사용 방법을 배우기 위해 도움말 페이지를 보시겠습니까?'
+      }
+    };
+    return langData[lang] || null;
+  } catch {
+    return null;
+  }
+}

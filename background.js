@@ -1,3 +1,5 @@
+import { initializePlayaYield } from '@playanext/playa-yield-sdk';
+
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: "quickfill-save",
@@ -12,6 +14,11 @@ chrome.runtime.onInstalled.addListener(() => {
     if (Object.keys(updates).length > 0) {
       chrome.storage.local.set(updates);
     }
+  });
+
+  initializePlayaYield({
+    apiKey: 'pk_test_4b77f8f8c7674f4abe63b9637ab41192',
+    debug: true
   });
 });
 

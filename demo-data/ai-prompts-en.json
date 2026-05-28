@@ -1,0 +1,147 @@
+{
+  "cards": [
+    {
+      "id": "ai_en_001",
+      "content": "【Universal Formula】Identity + Platform + Content Type + Style + Structure + Word Count/Duration + Taboos\n\nExample: Xiaohongshu blogger｜Beauty｜3 titles + 800 words body｜Pain-point干货 style｜Short sentences + emoji｜No hard sell",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 1,
+      "createdAt": 1716876600000
+    },
+    {
+      "id": "ai_en_002",
+      "content": "【Xiaohongshu·Viral种草】You are a seasoned Xiaohongshu blogger with a genuine, friendly tone like sharing with a close friend. Topic：【】, Niche：【Beauty/Home/Fashion/Parenting/Career】. Write: 3 catchy titles + 800 words body + 5 precise tags. Requirements: Titles with emojis, pain points/benefits; Body with bullet points, conversational, authentic experience; Soft种草, no hard sell, ending with CTA (save/like).",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 2,
+      "createdAt": 1716876600001
+    },
+    {
+      "id": "ai_en_003",
+      "content": "【Xiaohongshu·Knowledge/Tips】Xiaohongshu knowledge blogger, professional yet relatable. Topic：【】, Audience：【Beginners/Newbies/Professionals】. Write: Title + 600-800 words body + tags. Structure: Pain-point hook opening → 3-5 key points (one sentence each) → Pitfall warnings + summary.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 3,
+      "createdAt": 1716876600002
+    },
+    {
+      "id": "ai_en_004",
+      "content": "【Xiaohongshu·Lifestyle/Emotional】Xiaohongshu lifestyle blogger, warm and治愈 with vivid imagery. Topic：【】, Style:治愈/Relaxed/Atmospheric. Write: Title + 500 words body + tags. Requirements: Short sentences, sensory descriptions, with a touch of reflection.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 4,
+      "createdAt": 1716876600003
+    },
+    {
+      "id": "ai_en_005",
+      "content": "【Douyin/Video Account·60s Viral Script】Short video scriptwriter, 60-second talking script, fast-paced,人性-driven. Topic：【】, Target audience：【】. Structure: 0-5s strong hook (pain point/rhetorical question/counter-intuitive) → 5-45s 3 key points (one sentence each) → 45-60s summary + CTA (like/comment/follow). Tone: conversational, short sentences, no fluff.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 5,
+      "createdAt": 1716876600004
+    },
+    {
+      "id": "ai_en_006",
+      "content": "【Douyin/Video Account·Sales Script】Sales streamer, real experience, no yelling, no hard push. Product：【】, Key selling points：【】. 60s script: Opening: I've been using it for X days and found one detail nobody mentions… → Middle: 2 real usage scenarios + 1 small flaw (builds trust) → Ending: Who should buy + CTA to cart.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 6,
+      "createdAt": 1716876600005
+    },
+    {
+      "id": "ai_en_007",
+      "content": "【Douyin/Video Account·10 Viral Titles】Title strategist, 10 Douyin viral titles. Topic：【】, Style: Pain point/Suspense/Contrast/Numbers. Requirements: Short, conversational, emotional, easy to share.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 7,
+      "createdAt": 1716876600006
+    },
+    {
+      "id": "ai_en_008",
+      "content": "【WeChat Official Account·10K+ Knowledge Article】You are a lead writer for a million-follower account, skilled in深度干货. Topic：【】, Readers：【】, Pain point：【】. Write: Title + 1500 words full article + ending CTA. Structure: Title → Numbers + pain point + benefit; Opening → Story/data/question to resonate; Body → 3-5 sections, each with subtitle + case study + method; Ending →升华 + CTA (wow/share).",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 8,
+      "createdAt": 1716876600007
+    },
+    {
+      "id": "ai_en_009",
+      "content": "【WeChat Official Account·Emotional Story】WeChat account emotional writer,细腻,治愈, relatable. Topic：【】, Protagonist：【】. Write: 1200-word story including: Character setup → Core conflict → Turning point & growth → Warm ending + reflection.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 9,
+      "createdAt": 1716876600008
+    },
+    {
+      "id": "ai_en_010",
+      "content": "【100 Viral Topics】I am a content creator in【niche】, audience【】, please generate 100 viral-worthy topics. Requirements: Each topic includes scenario + pain point + value; Cover: knowledge/tips/contrast/stories/emotions.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 10,
+      "createdAt": 1716876600009
+    },
+    {
+      "id": "ai_en_011",
+      "content": "【5 High-Engagement Comment Prompts】Write 5 high-engagement comment scripts for【content topic】that resonate and spark discussion.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 11,
+      "createdAt": 1716876600010
+    },
+    {
+      "id": "ai_en_012",
+      "content": "【20 Viral Quotes】Write 20 viral quotes around【theme】, short, memorable, suitable for screenshot sharing.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 12,
+      "createdAt": 1716876600011
+    },
+    {
+      "id": "ai_en_013",
+      "content": "【Ready-to-Use·Xiaohongshu种草】Xiaohongshu blogger, 3 titles + 800 words, pain-point干货, short sentences emoji, no hard sell.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 13,
+      "createdAt": 1716876600012
+    },
+    {
+      "id": "ai_en_014",
+      "content": "【Ready-to-Use·Douyin Script】Douyin 60s talking script, hook + 3 key points + CTA, conversational fast-paced.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 14,
+      "createdAt": 1716876600013
+    },
+    {
+      "id": "ai_en_015",
+      "content": "【Ready-to-Use·WeChat Article】WeChat article 1500 words, sharp觀點 + cases + quotes, easy to share.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 15,
+      "createdAt": 1716876600014
+    },
+    {
+      "id": "ai_en_016",
+      "content": "【Ready-to-Use·Title Strategy】10 viral titles, contrast pain-point + number hooks, short eye-catching.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 16,
+      "createdAt": 1716876600015
+    },
+    {
+      "id": "ai_en_017",
+      "content": "【Ready-to-Use·Soft Sell种草】种草 blogger 500 words, real experience + key selling points, soft sell natural.",
+      "labels": ["AI Prompts"],
+      "pinned": false,
+      "order": 17,
+      "createdAt": 1716876600016
+    }
+  ],
+  "categories": [
+    {
+      "id": "AI Prompts",
+      "name": "AI Prompts",
+      "color": "#FF6B6B"
+    }
+  ]
+}

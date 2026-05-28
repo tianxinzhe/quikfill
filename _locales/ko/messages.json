@@ -1,0 +1,52 @@
+{
+  "extensionName": { "message": "퀵필 어시스턴트" },
+  "extensionDescription": { "message": "✨ 한 번 클릭으로 텍스트 빠르게 입력! 카드 관리, 카테고리, 데이터 백업 지원, 개인정보 보호 로컬 스토리지" },
+  "cmdToggleDescription": { "message": "QuickFill 사이드바 열기/닫기" },
+  "actionDefaultTitle": { "message": "QuickFill" },
+
+  "btnAddCard": { "message": "카드 추가" },
+  "btnExport": { "message": "내보내기" },
+  "btnImport": { "message": "가져오기" },
+
+  "categoryAll": { "message": "전체" },
+  "categoryUncategorized": { "message": "미분류" },
+  "categoryAdd": { "message": "분류 추가" },
+
+  "searchPlaceholder": { "message": "카드 검색..." },
+
+  "emptyStateNoCards": { "message": "카드 없음" },
+  "emptyStateHint": { "message": "웹 텍스트 우클릭으로 빠르게 저장" },
+
+  "toastClipboardSuccess": { "message": "클립보드에 복사됨, Ctrl+V로 붙여넣기" },
+
+  "promptCategoryName": { "message": "분류 이름 입력 (최대 10자)：" },
+  "alertCategoryNameTooLong": { "message": "분류 이름은 10자를 초과할 수 없습니다" },
+  "alertCannotDeleteDefault": { "message": "기본 분류는 삭제할 수 없습니다" },
+
+  "modalAddTitle": { "message": "카드 추가" },
+  "modalEditTitle": { "message": "카드 편집" },
+  "textareaPlaceholder": { "message": "텍스트 내용 입력..." },
+  "btnSave": { "message": "저장" },
+  "btnUpdate": { "message": "수정" },
+  "btnCancel": { "message": "취소" },
+  "btnConfirm": { "message": "확인" },
+  "btnConfirmSave": { "message": "저장 확인" },
+
+  "categoryNone": { "message": "분류 없음" },
+  "selectCategories": { "message": "분류 선택 (여러 개 가능)：" },
+
+  "confirmDeleteCard": { "message": "이 카드를 삭제하시겠습니까？" },
+  "confirmDeleteCategory": { "message": "이 분류를 삭제하시겠습니까？" },
+
+  "alertInvalidBackup": { "message": "유효하지 않은 백업 파일" },
+  "alertImportOverwrite": { "message": "기존 데이터를 덮어쓰시겠습니까？\n확인=덮어쓰기, 취소=병합" },
+  "alertImportSuccess": { "message": "가져오기 성공" },
+  "alertImportFailed": { "message": "파일 파싱 실패" },
+
+  "contextMenuSave": { "message": "📥 QuickFill에 저장" },
+  "contextMenuSaveFull": { "message": "📥 QuickFill에 저장" },
+
+  "pickerPreview": { "message": "미리보기：" },
+
+  "adSupportLabel": { "message": "QuickFill 지원 → 더 많은 기능 잠금 해제" }
+}

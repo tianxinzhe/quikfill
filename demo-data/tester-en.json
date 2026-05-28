@@ -1,0 +1,115 @@
+{
+  "cards": [
+    {
+      "id": "tester_en_001",
+      "content": "【Form·Universal Test Phone】13800000000",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 1,
+      "createdAt": 1716876600000
+    },
+    {
+      "id": "tester_en_002",
+      "content": "【Form·Valid ID (Adult)】110101199003072345",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 2,
+      "createdAt": 1716876600001
+    },
+    {
+      "id": "tester_en_003",
+      "content": "【Form·Valid ID (Minor)】11010120150601123X",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 3,
+      "createdAt": 1716876600002
+    },
+    {
+      "id": "tester_en_004",
+      "content": "【Form·Test Email (Standard)】qa_test_user@domain.com",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 4,
+      "createdAt": 1716876600003
+    },
+    {
+      "id": "tester_en_005",
+      "content": "【Form·Long Email (Boundary Test)】test_admin_long_string_overflow_12345@verylongdomainname.com",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 5,
+      "createdAt": 1716876600004
+    },
+    {
+      "id": "tester_en_006",
+      "content": "【Form·Virtual Test Bank Card】6222026000001234567",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 6,
+      "createdAt": 1716876600005
+    },
+    {
+      "id": "tester_en_007",
+      "content": "【Destructive·XSS Alert Script】<script>alert('XSS_Test')</script>",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 7,
+      "createdAt": 1716876600006
+    },
+    {
+      "id": "tester_en_008",
+      "content": "【Destructive·HTML Universal Break】\"></a></div><img src=x onerror=alert(1)>",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 8,
+      "createdAt": 1716876600007
+    },
+    {
+      "id": "tester_en_009",
+      "content": "【Destructive·SQL Injection Universal】' OR '1'='1",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 9,
+      "createdAt": 1716876600008
+    },
+    {
+      "id": "tester_en_010",
+      "content": "【Destructive·Special Chars + Emoji】~!@#$%^&*()_+{}|:\"<>?`123 🚀👨‍💻\n\r",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 10,
+      "createdAt": 1716876600009
+    },
+    {
+      "id": "tester_en_011",
+      "content": "【Destructive·500 Char Long Text (Overflow)】Test long text overflow test long text overflow test long text overflow (repeat to 500 chars)",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 11,
+      "createdAt": 1716876600010
+    },
+    {
+      "id": "tester_en_012",
+      "content": "【PM·Bug Report Template】\n【Environment】：Staging / v1.0.0\n【Preconditions】：\n【Steps】：\n1. \n2. \n【Expected】：\n【Actual】：\n【Reproduction】：100%",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 12,
+      "createdAt": 1716876600011
+    },
+    {
+      "id": "tester_en_013",
+      "content": "【PM·Android H5 Compatibility UA】Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
+      "labels": ["Testing"],
+      "pinned": false,
+      "order": 13,
+      "createdAt": 1716876600012
+    }
+  ],
+  "categories": [
+    {
+      "id": "Testing",
+      "name": "Testing",
+      "color": "#45B7D1"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "extensionName": { "message": "QuickFill Assistant" },
+  "extensionDescription": { "message": "✨ One-click quick text filling! Support card management, categories, data backup, privacy-first local storage" },
+  "cmdToggleDescription": { "message": "Open/Close QuickFill sidebar" },
+  "actionDefaultTitle": { "message": "QuickFill" },
+
+  "btnAddCard": { "message": "Add Card" },
+  "btnExport": { "message": "Export" },
+  "btnImport": { "message": "Import" },
+
+  "categoryAll": { "message": "All" },
+  "categoryUncategorized": { "message": "Uncategorized" },
+  "categoryAdd": { "message": "Add Category" },
+
+  "searchPlaceholder": { "message": "Search cards..." },
+
+  "emptyStateNoCards": { "message": "No cards yet" },
+  "emptyStateHint": { "message": "Right-click web text to quickly save" },
+
+  "toastClipboardSuccess": { "message": "Copied to clipboard, Ctrl+V to paste" },
+
+  "promptCategoryName": { "message": "Enter category name (max 10 chars):" },
+  "alertCategoryNameTooLong": { "message": "Category name cannot exceed 10 characters" },
+  "alertCannotDeleteDefault": { "message": "Cannot delete default category" },
+
+  "modalAddTitle": { "message": "Add Card" },
+  "modalEditTitle": { "message": "Edit Card" },
+  "textareaPlaceholder": { "message": "Enter text content..." },
+  "btnSave": { "message": "Save" },
+  "btnUpdate": { "message": "Update" },
+  "btnCancel": { "message": "Cancel" },
+  "btnConfirm": { "message": "Confirm" },
+  "btnConfirmSave": { "message": "Confirm Save" },
+
+  "categoryNone": { "message": "None" },
+  "selectCategories": { "message": "Select categories (multiple):" },
+
+  "confirmDeleteCard": { "message": "Delete this card?" },
+  "confirmDeleteCategory": { "message": "Delete this category?" },
+
+  "alertInvalidBackup": { "message": "Invalid backup file" },
+  "alertImportOverwrite": { "message": "Overwrite existing data?\nOK=overwrite, Cancel=merge" },
+  "alertImportSuccess": { "message": "Import successful" },
+  "alertImportFailed": { "message": "File parsing failed" },
+
+  "contextMenuSave": { "message": "📥 Save to QuickFill" },
+  "contextMenuSaveFull": { "message": "📥 Save to QuickFill" },
+
+  "pickerPreview": { "message": "Preview:" },
+
+  "adSupportLabel": { "message": "Support QuickFill → Unlock more features" }
+}

@@ -1,0 +1,52 @@
+{
+  "extensionName": { "message": "クイックフィルアシスタント" },
+  "extensionDescription": { "message": "✨ ワンクリックでテキストを素早く入力！カード管理、カテゴリ、データバックアップに対応、プライバシー保護のローカルストレージ" },
+  "cmdToggleDescription": { "message": "QuickFillサイドバーで開く/閉じる" },
+  "actionDefaultTitle": { "message": "QuickFill" },
+
+  "btnAddCard": { "message": "カード追加" },
+  "btnExport": { "message": "エクスポート" },
+  "btnImport": { "message": "インポート" },
+
+  "categoryAll": { "message": "すべて" },
+  "categoryUncategorized": { "message": "未分類" },
+  "categoryAdd": { "message": "分類追加" },
+
+  "searchPlaceholder": { "message": "カード検索..." },
+
+  "emptyStateNoCards": { "message": "カードがありません" },
+  "emptyStateHint": { "message": "Webテキストを右クリックで簡単保存" },
+
+  "toastClipboardSuccess": { "message": "クリップボードにコピー、Ctrl+Vで貼り付け" },
+
+  "promptCategoryName": { "message": "分類名を入力（最大10文字）：" },
+  "alertCategoryNameTooLong": { "message": "分類名は10文字以内にしてください" },
+  "alertCannotDeleteDefault": { "message": "デフォルト分類は削除できません" },
+
+  "modalAddTitle": { "message": "カード追加" },
+  "modalEditTitle": { "message": "カード編集" },
+  "textareaPlaceholder": { "message": "テキスト内容入力..." },
+  "btnSave": { "message": "保存" },
+  "btnUpdate": { "message": "更新" },
+  "btnCancel": { "message": "キャンセル" },
+  "btnConfirm": { "message": "確認" },
+  "btnConfirmSave": { "message": "保存確認" },
+
+  "categoryNone": { "message": "分類なし" },
+  "selectCategories": { "message": "分類を選択（複数可）：" },
+
+  "confirmDeleteCard": { "message": "このカードを削除しますか？" },
+  "confirmDeleteCategory": { "message": "この分類を削除しますか？" },
+
+  "alertInvalidBackup": { "message": "無効なバックアップファイル" },
+  "alertImportOverwrite": { "message": "既存データを上書きしますか？\nOK=上書き、キャンセル=マージ" },
+  "alertImportSuccess": { "message": "インポート成功" },
+  "alertImportFailed": { "message": "ファイル解析失敗" },
+
+  "contextMenuSave": { "message": "📥 QuickFillに保存" },
+  "contextMenuSaveFull": { "message": "📥 QuickFillに保存" },
+
+  "pickerPreview": { "message": "プレビュー：" },
+
+  "adSupportLabel": { "message": "QuickFillをサポート → もっと機能解脱" }
+}

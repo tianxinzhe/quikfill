@@ -11,35 +11,62 @@
   <div class="header">
     <h1>QuickFill</h1>
     <div class="header-actions">
-      <button id="add-btn-top" title="添加卡片">+</button>
-      <button id="export-btn" title="导出数据">📥</button>
-      <button id="import-btn" title="导入数据">📤</button>
+      <button id="add-btn-top" data-i18n-title="btnAddCard" title="Add Card">+</button>
+      <button id="export-btn" data-i18n-title="btnExport" title="Export">📥</button>
+      <button id="import-btn" data-i18n-title="btnImport" title="Import">📤</button>
+      <button id="lang-btn" data-i18n-title="btnLanguage" title="切换语言">🌐</button>
+      <button id="help-btn" data-i18n-title="btnHelp" title="使用帮助">❓</button>
     </div>
   </div>
 
-  <div class="category-tabs">
-    <button class="category-tab active" data-category="all">全部</button>
-    <button class="category-tab" data-category="uncategorized">未分类</button>
-    <button class="category-tab add-category" id="add-category-btn" title="添加分类">+</button>
+  <div class="category-tabs" id="category-tabs">
+    <span class="category-tab active" data-category="all" data-i18n="categoryAll">全部</span>
+    <span class="category-tab" data-category="uncategorized" data-i18n="categoryUncategorized">未分类</span>
+    <span class="category-tab add-category" id="add-category-btn" data-i18n-title="categoryAdd" title="Add Category">+</span>
   </div>
 
   <div class="search-container">
-    <input type="text" id="search-input" placeholder="搜索卡片...">
+    <input type="text" id="search-input" data-i18n-placeholder="searchPlaceholder" placeholder="搜索文本...">
   </div>
 
-  <div id="card-list" class="card-list">
-    <div class="empty-state">
-      <p>暂无卡片</p>
-      <p>右键网页文本可快速收藏</p>
+  <div class="card-actions-bar" id="card-actions-bar">
+    <button id="add-card-btn" class="action-btn-primary" data-i18n-title="btnAddCard">
+      <span class="btn-icon">+</span>
+      <span class="btn-text" data-i18n="btnAddCard">添加</span>
+    </button>
+    <button id="edit-mode-btn" class="action-btn-secondary" data-i18n-title="btnEditMode">
+      <span class="btn-text" data-i18n="btnEditMode">编辑</span>
+    </button>
+    <div class="edit-mode-controls" id="edit-mode-controls" style="display: none;">
+      <button id="batch-delete-btn" class="action-btn-danger" data-i18n-title="btnBatchDelete" disabled>
+        <span class="btn-text" data-i18n="btnBatchDelete">批量删除</span>
+        <span class="selected-count" id="selected-count">0</span>
+      </button>
+      <label class="select-all-checkbox">
+        <input type="checkbox" id="select-all">
+        <span data-i18n="selectAll">全选</span>
+      </label>
+      <button id="cancel-edit-btn" class="action-btn-cancel" data-i18n-title="btnCancelEdit">
+        <span class="btn-text" data-i18n="btnCancelEdit">取消</span>
+      </button>
     </div>
   </div>
 
+  <div id="card-list" class="card-list">
+
   <div id="toast" class="toast"></div>
 
-  <button id="add-btn" title="添加卡片">+</button>
+  <button id="add-btn" data-i18n-title="btnAddCard" title="Add Card">+</button>
 
   <input type="file" id="file-input" style="display: none;" accept=".json">
 
-  <script src="sidepanel.js"></script>
+  <div class="footer-contact">
+    <a href="help.html" target="_blank" class="help-link" data-i18n="btnHelp">使用帮助</a>
+    <span class="separator">|</span>
+    <p data-i18n="footerContact">需要新功能？联系我：</p>
+    <a href="mailto:tianxinzhe032@gmail.com" class="contact-email">tianxinzhe032@gmail.com</a>
+  </div>
+
+  <script src="dist/sidepanel.js"></script>
 </body>
 </html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QuickFill 使用指南 | User Guide</title>
+  <link rel="stylesheet" href="help.css">
+</head>
+<body>
+  <div class="help-container">
+    <header class="help-header">
+      <h1>📖 QuickFill 使用指南 / User Guide</h1>
+      <p class="subtitle">快捷文本填充工具 - 让重复输入变得简单 | Text Filler Tool - Make Repetitive Typing Easy</p>
+    </header>
+
+    <nav class="help-nav">
+      <a href="#getting-started">快速开始</a>
+      <a href="#core-features">核心功能</a>
+      <a href="#categories">分类管理</a>
+      <a href="#variables">变量说明</a>
+      <a href="#batch-operations">批量操作</a>
+      <a href="#import-templates">导入模板</a>
+      <a href="#privacy">隐私说明</a>
+    </nav>
+
+    <section id="getting-started">
+      <h2>🚀 快速开始 / Getting Started</h2>
+      
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>右键网页选中文本 | Select Text on Webpage</h3>
+          <p>在网页上选中任意文字，然后 <strong>右键</strong> 点击，选择 <em>"📥 收藏到 QuickFill"</em><br>
+          Select any text on a webpage, then <strong>right-click</strong> and choose <em>"📥 Save to QuickFill"</em></p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>选择分类并保存 | Choose Category & Save</h3>
+          <p>在弹出的对话框中选择分类（可多选），点击确认保存<br>
+          Select categories (multi-select allowed) in the popup dialog and click confirm to save</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>点击文本快速填充 | Click to Fill</h3>
+          <p>打开侧边栏，点击任意文本即可自动填充到网页输入框中<br>
+          Open the sidebar, click any text to auto-fill into webpage input fields</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="core-features">
+      <h2>⚡ 核心功能 / Core Features</h2>
+      
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📌</div>
+          <h3>置顶文本 / Pin</h3>
+          <p>重要文本可以置顶显示，方便快速访问<br>Pin important texts for quick access</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✏️</div>
+          <h3>编辑文本 / Edit</h3>
+          <p>点击编辑按钮修改文本内容和分类<br>Click edit button to modify text and categories</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>快速搜索 / Search</h3>
+          <p>支持按内容关键词搜索，快速找到需要的文本<br>Search by keyword to find texts quickly</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📁</div>
+          <h3>分类管理 / Categories</h3>
+          <p>创建、删除分类，分类名称最多5个字符<br>Create/delete categories (max 5 chars)</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗑️</div>
+          <h3>批量删除 / Batch Delete</h3>
+          <p>编辑模式下可批量选择并删除文本<br>Select and delete multiple texts in edit mode</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>多语言 / Multi-language</h3>
+          <p>支持中文、英文、日文、韩文切换<br>Supports Chinese, English, Japanese, Korean</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories">
+      <h2>📁 分类管理 / Category Management</h2>
+      
+      <div class="tip-box">
+        <h3>如何添加分类？ / How to Add Category?</h3>
+        <ol>
+          <li>点击分类栏右侧的 <strong>+</strong> 按钮 | Click the <strong>+</strong> button next to categories</li>
+          <li>输入分类名称（最多5个字符）| Enter category name (max 5 characters)</li>
+          <li>点击确定完成创建 | Click OK to create</li>
+        </ol>
+      </div>
+
+      <div class="tip-box">
+        <h3>如何删除分类？ / How to Delete Category?</h3>
+        <ol>
+          <li>点击分类栏右侧的 <strong>⚙️</strong> 按钮进入管理模式 | Click <strong>⚙️</strong> to enter manage mode</li>
+          <li>点击要删除分类旁边的 <strong>×</strong> | Click <strong>×</strong> next to the category</li>
+          <li>在确认对话框中点击确定 | Confirm in the dialog</li>
+        </ol>
+        <p class="note">💡 删除分类后，该分类下的文本会变为「未分类」状态，不会丢失<br>
+        💡 Texts under deleted category become "uncategorized", not deleted</p>
+      </div>
+    </section>
+
+    <section id="variables">
+      <h2>🔧 变量说明 / Variables</h2>
+      
+      <p class="intro">在文本中使用变量，填充时会自动替换为实际值。变量格式：<code>{{变量名}}</code><br>
+      Use variables in texts, they will be replaced with actual values when filling. Format: <code>{{variable}}</code></p>
+      
+      <div class="variable-section">
+        <h3>📅 日期时间变量 / Date & Time</h3>
+        <table class="variable-table">
+          <thead>
+            <tr>
+              <th>变量 / Variable</th>
+              <th>说明 / Description</th>
+              <th>示例 / Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>{{year}}</code></td><td>年份 / Year</td><td>2026</td></tr>
+            <tr><td><code>{{month}}</code></td><td>月份 / Month</td><td>05</td></tr>
+            <tr><td><code>{{day}}</code></td><td>日期 / Day</td><td>28</td></tr>
+            <tr><td><code>{{hour}}</code></td><td>小时 / Hour</td><td>14</td></tr>
+            <tr><td><code>{{minute}}</code></td><td>分钟 / Minute</td><td>30</td></tr>
+            <tr><td><code>{{weekday}}</code></td><td>星期 / Weekday</td><td>周三 / Wed</td></tr>
+            <tr><td><code>{{weekday_cn}}</code></td><td>中文星期 / Chinese Weekday</td><td>星期三 / Wednesday</td></tr>
+            <tr><td><code>{{date}}</code></td><td>完整日期 / Full Date</td><td>2026-05-28</td></tr>
+            <tr><td><code>{{time}}</code></td><td>完整时间 / Full Time</td><td>14:30:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="variable-section">
+        <h3>🎲 随机变量 / Random Variables</h3>
+        <table class="variable-table">
+          <thead>
+            <tr>
+              <th>变量 / Variable</th>
+              <th>说明 / Description</th>
+              <th>示例 / Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>{{random_int}}</code></td><td>随机整数 / Random Integer</td><td>8372645</td></tr>
+            <tr><td><code>{{random_int_1_3}}</code></td><td>1-3随机数 / Random 1-3</td><td>2</td></tr>
+            <tr><td><code>{{random_phone}}</code></td><td>随机手机号 / Random Phone</td><td>13812345678</td></tr>
+            <tr><td><code>{{random_letters_4}}</code></td><td>4位随机字母 / 4 Random Letters</td><td>aBcD</td></tr>
+            <tr><td><code>{{random_letters_8}}</code></td><td>8位随机字母 / 8 Random Letters</td><td>xKjHdLpQ</td></tr>
+            <tr><td><code>{{random_hex_16}}</code></td><td>16位十六进制 / 16 Hex Chars</td><td>7f3a9c2e...</td></tr>
+            <tr><td><code>{{uuid}}</code></td><td>UUID</td><td>a1b2c3d4-...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="example-box">
+        <h3>💡 使用示例 / Example</h3>
+        <div class="example">
+          <p class="example-label">输入文本 / Input:</p>
+          <code>订单号：{{random_int}}，下单日期：{{date}} {{time}}，编号：{{random_letters_8}}<br>
+          Order No: {{random_int}}, Date: {{date}} {{time}}, ID: {{random_letters_8}}</code>
+        </div>
+        <div class="example">
+          <p class="example-label">填充结果 / Output:</p>
+          <code>订单号：8372645，下单日期：2026-05-28 14:30:00，编号：xKjHdLpQ<br>
+          Order No: 8372645, Date: 2026-05-28 14:30:00, ID: xKjHdLpQ</code>
+        </div>
+      </div>
+    </section>
+
+    <section id="batch-operations">
+      <h2>📋 批量操作 / Batch Operations</h2>
+      
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>点击「编辑」按钮 | Click "Edit"</h3>
+          <p>进入编辑模式，显示复选框和批量操作按钮<br>Enter edit mode, checkboxes and batch buttons appear</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>选择要删除的文本 | Select Texts</h3>
+          <p>点击文本左侧的复选框，或使用「全选」按钮<br>Click checkboxes or use "Select All"</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>点击「删除」按钮 | Click "Delete"</h3>
+          <p>确认删除后，选中的文本将被永久移除<br>Confirm to permanently delete selected texts</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="import-templates">
+      <h2>📥 导入模板 / Import Templates</h2>
+      
+      <p class="intro">点击下载按钮下载模板文件，然后在插件中导入使用<br>
+      Click download buttons to get template files, then import in the extension</p>
+
+      <div class="template-section">
+        <h3>🤖 AI提示词模板 / AI Prompts</h3>
+        <div class="template-list">
+          <div class="template-card">
+            <div class="template-icon">🌐</div>
+            <div class="template-info">
+              <h4>中文AI提示词 / Chinese AI Prompts</h4>
+              <p>小红书/抖音/视频号/公众号全套自媒体创作提示词</p>
+            </div>
+            <a href="demo-data/ai-prompts-zh.json" download class="download-btn">下载 / Download</a>
+          </div>
+          <div class="template-card">
+            <div class="template-icon">🇬🇧</div>
+            <div class="template-info">
+              <h4>英文AI提示词 / English AI Prompts</h4>
+              <p>Xiaohongshu/Douyin/WeChat full-stack content creation prompts</p>
+            </div>
+            <a href="demo-data/ai-prompts-en.json" download class="download-btn">下载 / Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="template-section">
+        <h3>🧪 测试人员模板 / Tester Templates</h3>
+        <div class="template-list">
+          <div class="template-card">
+            <div class="template-icon">🧪</div>
+            <div class="template-info">
+              <h4>中文测试模板 / Chinese Tester Templates</h4>
+              <p>测试账号、API请求、Bug报告、SQL查询、压测数据等</p>
+            </div>
+            <a href="demo-data/tester-zh.json" download class="download-btn">下载 / Download</a>
+          </div>
+          <div class="template-card">
+            <div class="template-icon">🧪</div>
+            <div class="template-info">
+              <h4>英文测试模板 / English Tester Templates</h4>
+              <p>Test accounts, API requests, bug reports, SQL queries, load test data</p>
+            </div>
+            <a href="demo-data/tester-en.json" download class="download-btn">下载 / Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="usage-tips">
+        <h3>📝 使用方法 / How to Use</h3>
+        <ol>
+          <li>点击下载按钮保存JSON文件到本地 | Click download to save JSON file</li>
+          <li>打开QuickFill侧边栏 | Open QuickFill sidebar</li>
+          <li>点击「导入」按钮 | Click "Import" button</li>
+          <li>选择下载的JSON文件 | Select the downloaded JSON file</li>
+          <li>选择「覆盖」或「合并」导入方式 | Choose "Overwrite" or "Merge"</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <h2>🔒 隐私说明 / Privacy</h2>
+      
+      <div class="privacy-box">
+        <ul>
+          <li>✅ <strong>纯本地存储 / Local Only</strong> - 所有数据存储在浏览器本地，不会上传到任何服务器<br>
+              All data stored locally in browser, never uploaded to any server</li>
+          <li>✅ <strong>不收集隐私 / No Privacy Collection</strong> - 不会收集任何用户个人信息<br>
+              No personal information collected</li>
+          <li>✅ <strong>不追踪用户 / No Tracking</strong> - 没有任何追踪或分析功能<br>
+              No tracking or analytics</li>
+          <li>✅ <strong>卸载即删除 / Delete on Uninstall</strong> - 卸载插件后，所有数据自动清除<br>
+              All data deleted when extension is uninstalled</li>
+        </ul>
+      </div>
+
+      <p class="copyright">QuickFill - 绝对隐私 · 纯本地运行 · 可视化文本管理 | Absolute Privacy · Local Only · Visual Text Management</p>
+      <p class="contact">联系作者 / Contact: <a href="mailto:tianxinzhe032@gmail.com">tianxinzhe032@gmail.com</a></p>
+    </section>
+  </div>
+</body>
+</html>
