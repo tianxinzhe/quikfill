@@ -191,9 +191,9 @@ function processVariables(content: string): string {
   content = content.replace(/\{\{random_int\}\}/g, String(generateRandomInt()));
   content = content.replace(/\{\{random_int_1_3\}\}/g, String(generateRandomInt(1, 3)));
   content = content.replace(/\{\{random_phone\}\}/g, generateRandomPhone());
-  content = content.replace(/\{\{random_letters_4\}\}/g, generateRandomLetters(4));
-  content = content.replace(/\{\{random_letters_8\}\}/g, generateRandomLetters(8));
-  content = content.replace(/\{\{random_hex_16\}\}/g, generateRandomHex(16));
+  content = content.replace(/\{\{random_letters[_:](\d+)\}\}/g, (_, n) => generateRandomLetters(parseInt(n)));
+  content = content.replace(/\{\{random_hex[_:](\d+)\}\}/g, (_, n) => generateRandomHex(parseInt(n)));
+  content = content.replace(/\{\{random_digits[_:](\d+)\}\}/g, (_, n) => generateRandomDigits(parseInt(n)));
   content = content.replace(/\{\{uuid\}\}/g, generateUUID());
 
   return content;
@@ -224,6 +224,14 @@ function generateRandomHex(length: number): string {
   let result = '';
   for (let i = 0; i < length; i++) {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
+
+function generateRandomDigits(length: number): string {
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    result += Math.floor(Math.random() * 10).toString();
   }
   return result;
 }

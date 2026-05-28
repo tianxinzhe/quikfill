@@ -2,7 +2,7 @@
   "cards": [
     {
       "id": "test_001",
-      "content": "【表单·万能测试手机号】13800000000",
+      "content": "【表单·万能测试手机号】{{random_phone}}",
       "labels": ["测试"],
       "pinned": false,
       "order": 1,
@@ -10,7 +10,7 @@
     },
     {
       "id": "test_002",
-      "content": "【表单·合法身份证(成年)】110101199003072345",
+      "content": "【表单·合法身份证(成年)】{{random_digits:18}}",
       "labels": ["测试"],
       "pinned": false,
       "order": 2,
@@ -18,7 +18,7 @@
     },
     {
       "id": "test_003",
-      "content": "【表单·合法身份证(未成年)】11010120150601123X",
+      "content": "【表单·合法身份证(未成年)】{{random_digits:18}}",
       "labels": ["测试"],
       "pinned": false,
       "order": 3,
@@ -26,7 +26,7 @@
     },
     {
       "id": "test_004",
-      "content": "【表单·测试邮箱(标准)】qa_test_user@domain.com",
+      "content": "【表单·测试邮箱(标准)】{{random_letters:8}}@example.com",
       "labels": ["测试"],
       "pinned": false,
       "order": 4,
@@ -34,7 +34,7 @@
     },
     {
       "id": "test_005",
-      "content": "【表单·超长邮箱(边界测试)】test_admin_long_string_overflow_12345@verylongdomainname.com",
+      "content": "【表单·超长邮箱(边界测试)】{{random_letters:8}}_{{random_letters:8}}@verylongdomainname.com",
       "labels": ["测试"],
       "pinned": false,
       "order": 5,
@@ -42,7 +42,7 @@
     },
     {
       "id": "test_006",
-      "content": "【表单·虚拟测试银行卡号】6222026000001234567",
+      "content": "【表单·虚拟测试银行卡号】{{random_digits:16}}",
       "labels": ["测试"],
       "pinned": false,
       "order": 6,

@@ -2,7 +2,7 @@
   "cards": [
     {
       "id": "tester_en_001",
-      "content": "【Form·Universal Test Phone】13800000000",
+      "content": "【Form·Universal Test Phone】{{random_phone}}",
       "labels": ["Testing"],
       "pinned": false,
       "order": 1,
@@ -10,7 +10,7 @@
     },
     {
       "id": "tester_en_002",
-      "content": "【Form·Valid ID (Adult)】110101199003072345",
+      "content": "【Form·Valid ID (Adult)】{{random_digits:18}}",
       "labels": ["Testing"],
       "pinned": false,
       "order": 2,
@@ -18,7 +18,7 @@
     },
     {
       "id": "tester_en_003",
-      "content": "【Form·Valid ID (Minor)】11010120150601123X",
+      "content": "【Form·Valid ID (Minor)】{{random_digits:18}}",
       "labels": ["Testing"],
       "pinned": false,
       "order": 3,
@@ -26,7 +26,7 @@
     },
     {
       "id": "tester_en_004",
-      "content": "【Form·Test Email (Standard)】qa_test_user@domain.com",
+      "content": "【Form·Test Email (Standard)】{{random_letters:8}}@example.com",
       "labels": ["Testing"],
       "pinned": false,
       "order": 4,
@@ -34,7 +34,7 @@
     },
     {
       "id": "tester_en_005",
-      "content": "【Form·Long Email (Boundary Test)】test_admin_long_string_overflow_12345@verylongdomainname.com",
+      "content": "【Form·Long Email (Boundary Test)】{{random_letters:8}}_{{random_letters:8}}@verylongdomainname.com",
       "labels": ["Testing"],
       "pinned": false,
       "order": 5,
@@ -42,7 +42,7 @@
     },
     {
       "id": "tester_en_006",
-      "content": "【Form·Virtual Test Bank Card】6222026000001234567",
+      "content": "【Form·Virtual Test Bank Card】{{random_digits:16}}",
       "labels": ["Testing"],
       "pinned": false,
       "order": 6,

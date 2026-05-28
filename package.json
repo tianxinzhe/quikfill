@@ -2,7 +2,7 @@
   "name": "quikfill",
   "version": "1.0.0",
   "description": "绝对隐私、纯本地运行、可视化卡片操作的 Chrome 侧边栏快捷文本填充工具",
-  "main": "background.js",
+  "private": true,
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
