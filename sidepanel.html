@@ -52,13 +52,50 @@
     </div>
   </div>
 
-  <div id="card-list" class="card-list">
+  <div id="card-list" class="card-list"></div>
 
   <div id="toast" class="toast"></div>
 
   <button id="add-btn" data-i18n-title="btnAddCard" title="Add Card">+</button>
 
   <input type="file" id="file-input" style="display: none;" accept=".json">
+
+  <div id="onboarding-overlay" class="onboarding-overlay" style="display: none;">
+    <div class="onboarding-content">
+      <div class="onboarding-icon">🚀</div>
+      <h2 data-i18n="onboardingTitle">欢迎使用 QuickFill</h2>
+      <p class="onboarding-subtitle" data-i18n="onboardingSubtitle">让重复输入变得简单</p>
+      
+      <div class="onboarding-steps">
+        <div class="onboarding-step">
+          <div class="step-icon">🖱️</div>
+          <div class="step-text">
+            <strong data-i18n="onboardingStep1Title">右键收藏</strong>
+            <p data-i18n="onboardingStep1Desc">在网页上选中文本，右键选择「收藏到 QuickFill」</p>
+          </div>
+        </div>
+        <div class="onboarding-step">
+          <div class="step-icon">👆</div>
+          <div class="step-text">
+            <strong data-i18n="onboardingStep2Title">点击填充</strong>
+            <p data-i18n="onboardingStep2Desc">打开侧边栏，点击任意卡片即可填充到输入框</p>
+          </div>
+        </div>
+        <div class="onboarding-step">
+          <div class="step-icon">📁</div>
+          <div class="step-text">
+            <strong data-i18n="onboardingStep3Title">分类管理</strong>
+            <p data-i18n="onboardingStep3Desc">创建分类整理文本，支持搜索和批量操作</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="onboarding-actions">
+        <button id="onboarding-start" class="onboarding-btn-primary" data-i18n="onboardingStart">开始使用</button>
+        <button id="onboarding-help" class="onboarding-btn-secondary" data-i18n="onboardingViewHelp">查看帮助</button>
+      </div>
+    </div>
+  </div>
 
   <div class="footer-contact">
     <a href="help.html" target="_blank" class="help-link" data-i18n="btnHelp">使用帮助</a>

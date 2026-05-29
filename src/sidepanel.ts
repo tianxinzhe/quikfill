@@ -124,7 +124,7 @@ function renderCategoryTabs(): void {
 function addCategory(): void {
   const name = prompt(t('promptCategoryName'));
   if (!name || name.trim().length === 0) return;
-  if (name.length > 5) {
+  if (name.length > 10) {
     alert(t('alertCategoryNameTooLong'));
     return;
   }
@@ -246,31 +246,31 @@ function generateUUID(): string {
 async function fillInput(text: string): Promise<void> {
   const processedText = processVariables(text);
 
-  try {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (tab.id) {
-      chrome.tabs.sendMessage(tab.id, { action: 'fillText', text: processedText }, () => {
-        if (chrome.runtime.lastError) {
-          navigator.clipboard.writeText(processedText);
-          showToast(t('toastClipboardSuccess'));
-        }
-      });
-    }
-  } catch {
-    navigator.clipboard.writeText(processedText);
-    showToast(t('toastClipboardSuccess'));
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (tab.id) {
+    chrome.tabs.sendMessage(tab.id, { action: 'fillText', text: processedText }, () => {
+      if (!chrome.runtime.lastError) {
+        showToast(t('toastFillSuccess'));
+      }
+    });
   }
+  chrome.storage.session.set({ lastFilledText: processedText });
 }
 
+let toastTimeout: ReturnType<typeof setTimeout> | null = null;
+
 function showToast(message: string): void {
-  const toast = document.createElement('div');
-  toast.className = 'toast';
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  if (toastTimeout) clearTimeout(toastTimeout);
+  toast.classList.remove('show');
   toast.textContent = message;
-  document.body.appendChild(toast);
-  requestAnimationFrame(() => toast.classList.add('show'));
-  setTimeout(() => {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => toast.classList.add('show'));
+  });
+  toastTimeout = setTimeout(() => {
     toast.classList.remove('show');
-    setTimeout(() => toast.remove(), 300);
+    toastTimeout = null;
   }, 2000);
 }
 
@@ -292,7 +292,17 @@ function renderCards(): void {
   }
 
   if (filtered.length === 0) {
-    container.innerHTML = `<div class="empty-state"><p>${t('emptyStateNoCards')}</p><p>${t('emptyStateHint')}</p></div>`;
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">📝</div>
+        <h3>${t('emptyStateNoCards')}</h3>
+        <p>${t('emptyStateHint')}</p>
+        <div class="empty-state-actions">
+          <button class="empty-state-btn" id="empty-state-add-btn">${t('emptyStateAddFirst')}</button>
+          <a href="help.html" target="_blank" class="empty-state-link">${t('emptyStateLearnMore')}</a>
+        </div>
+      </div>`;
+    container.querySelector('#empty-state-add-btn')?.addEventListener('click', showAddCardModal);
     return;
   }
 
@@ -365,6 +375,59 @@ function renderCards(): void {
       }
     });
   });
+
+  if (!isEditMode) {
+    let draggedCardId: string | null = null;
+
+    document.querySelectorAll('.card').forEach(card => {
+      const cardEl = card as HTMLElement;
+      cardEl.draggable = true;
+
+      cardEl.addEventListener('dragstart', (e) => {
+        draggedCardId = cardEl.dataset.id || null;
+        cardEl.classList.add('dragging');
+        e.dataTransfer!.effectAllowed = 'move';
+      });
+
+      cardEl.addEventListener('dragend', () => {
+        cardEl.classList.remove('dragging');
+        document.querySelectorAll('.card.drag-over').forEach(c => c.classList.remove('drag-over'));
+        draggedCardId = null;
+      });
+
+      cardEl.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.dataTransfer!.dropEffect = 'move';
+      });
+
+      cardEl.addEventListener('dragenter', (e) => {
+        e.preventDefault();
+        if (cardEl.dataset.id !== draggedCardId) {
+          cardEl.classList.add('drag-over');
+        }
+      });
+
+      cardEl.addEventListener('dragleave', () => {
+        cardEl.classList.remove('drag-over');
+      });
+
+      cardEl.addEventListener('drop', (e) => {
+        e.preventDefault();
+        cardEl.classList.remove('drag-over');
+        if (!draggedCardId || draggedCardId === cardEl.dataset.id) return;
+
+        const fromIndex = cards.findIndex(c => c.id === draggedCardId);
+        const toIndex = cards.findIndex(c => c.id === cardEl.dataset.id);
+        if (fromIndex === -1 || toIndex === -1) return;
+
+        const [moved] = cards.splice(fromIndex, 1);
+        cards.splice(toIndex, 0, moved);
+        cards.forEach((c, i) => c.order = i);
+        sendMessage('saveCards', { cards });
+        renderCards();
+      });
+    });
+  }
 }
 
 function escapeHtml(text: string): string {
@@ -752,13 +815,26 @@ async function checkFirstUse(): Promise<void> {
   }
 
   if (firstUse && cards.length === 0) {
-    const showGuide = confirm(t('firstUseGuide'));
-    if (showGuide) {
-      openHelp();
+    const overlay = document.getElementById('onboarding-overlay');
+    if (!overlay) return;
+    
+    overlay.style.display = 'flex';
+    
+    const startBtn = document.getElementById('onboarding-start');
+    const helpBtn = document.getElementById('onboarding-help');
+    
+    const dismiss = async () => {
+      overlay.style.display = 'none';
       await new Promise<void>((resolve) => {
         chrome.storage.local.set({ 'quickfill_first_use': false }, () => resolve());
       });
-    }
+    };
+    
+    startBtn?.addEventListener('click', dismiss);
+    helpBtn?.addEventListener('click', () => {
+      openHelp();
+      dismiss();
+    });
   }
 }
 

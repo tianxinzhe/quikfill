@@ -23,9 +23,9 @@ const LANG_DATA: Record<string, Record<string, string>> = {
 };
 
 initializePlayaYield({
-  // apiKey: 'pk_test_4b77f8f8c7674f4abe63b9637ab41192',
+  //apiKey: 'pk_test_4b77f8f8c7674f4abe63b9637ab41192',
   apiKey: 'pk_live_e4f6217102f342109c05c547b4004dc6',
-  debug: true
+  debug: false
 });
 
 chrome.alarms.create('keepAlive', { periodInMinutes: 0.5 });
@@ -78,6 +78,25 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 chrome.commands.onCommand.addListener((command) => {
   if (command === 'toggle-sidepanel') {
     chrome.sidePanel.open({ windowId: chrome.windows.WINDOW_ID_CURRENT });
+  } else if (command === 'fill-last-input') {
+    chrome.storage.session.get('lastFilledText', (result) => {
+      if (result.lastFilledText) {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+          if (tabs[0]?.id) {
+            chrome.tabs.sendMessage(tabs[0].id, { action: 'fillText', text: result.lastFilledText });
+          }
+        });
+      }
+    });
+  } else if (command === 'save-selection') {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const tabId = tabs[0]?.id;
+      if (!tabId) return;
+      chrome.tabs.sendMessage(tabId, { action: 'getSelection' }, (response) => {
+        if (chrome.runtime.lastError || !response?.text) return;
+        chrome.tabs.sendMessage(tabId, { action: 'showCategoryPicker', text: response.text });
+      });
+    });
   }
 });
 

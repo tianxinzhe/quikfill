@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "__MSG_extensionDescription__",
   "default_locale": "zh_CN",
-  "permissions": ["sidePanel", "storage", "activeTab", "contextMenus", "clipboardWrite", "alarms", "tabs"],
+  "minimum_chrome_version": "114",
+  "permissions": ["sidePanel", "storage", "activeTab", "contextMenus", "alarms", "tabs"],
   "host_permissions": ["<all_urls>"],
   "commands": {
     "toggle-sidepanel": {
@@ -13,6 +14,20 @@
         "mac": "Command+Shift+F"
       },
       "description": "__MSG_cmdToggleDescription__"
+    },
+    "fill-last-input": {
+      "suggested_key": {
+        "default": "Alt+Shift+F",
+        "mac": "Alt+Shift+F"
+      },
+      "description": "__MSG_cmdFillDescription__"
+    },
+    "save-selection": {
+      "suggested_key": {
+        "default": "Alt+Shift+S",
+        "mac": "Alt+Shift+S"
+      },
+      "description": "__MSG_cmdSaveSelectionDescription__"
     }
   },
   "background": {

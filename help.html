@@ -15,6 +15,7 @@
     <nav class="help-nav">
       <a href="#getting-started">快速开始</a>
       <a href="#core-features">核心功能</a>
+      <a href="#shortcuts">快捷键</a>
       <a href="#categories">分类管理</a>
       <a href="#variables">变量说明</a>
       <a href="#batch-operations">批量操作</a>
@@ -28,9 +29,9 @@
       <div class="step-card">
         <div class="step-number">1</div>
         <div class="step-content">
-          <h3>右键网页选中文本 | Select Text on Webpage</h3>
-          <p>在网页上选中任意文字，然后 <strong>右键</strong> 点击，选择 <em>"📥 收藏到 QuickFill"</em><br>
-          Select any text on a webpage, then <strong>right-click</strong> and choose <em>"📥 Save to QuickFill"</em></p>
+          <h3>右键或快捷键保存文本 | Save Text via Right-Click or Shortcut</h3>
+          <p>在网页上选中任意文字，可以 <strong>右键</strong> → <em>"📥 收藏到 QuickFill"</em>，或直接按 <strong>Alt+Shift+S</strong><br>
+          Select any text, then <strong>right-click</strong> → <em>"📥 Save to QuickFill"</em>, or press <strong>Alt+Shift+S</strong></p>
         </div>
       </div>
 
@@ -75,7 +76,17 @@
         <div class="feature-card">
           <div class="feature-icon">📁</div>
           <h3>分类管理 / Categories</h3>
-          <p>创建、删除分类，分类名称最多5个字符<br>Create/delete categories (max 5 chars)</p>
+          <p>创建、删除分类，分类名称最多10个字符<br>Create/delete categories (max 10 chars)</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>拖拽排序 / Drag & Drop</h3>
+          <p>长按拖拽卡片可自由排序，自动保存顺序<br>Drag cards to reorder, order saved automatically</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⌨️</div>
+          <h3>全局快捷键 / Shortcuts</h3>
+          <p>Alt+Shift+F 填充上次内容<br>Alt+Shift+S 保存选中文字为卡片<br>Alt+Shift+F fill last input | Alt+Shift+S save selection</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🗑️</div>
@@ -90,6 +101,28 @@
       </div>
     </section>
 
+    <section id="shortcuts">
+      <h2>⌨️ 快捷键 / Keyboard Shortcuts</h2>
+      <table class="variable-table">
+        <thead>
+          <tr>
+            <th>快捷键 / Shortcut</th>
+            <th>功能 / Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>Ctrl+Shift+F</code></td><td>打开/关闭侧边栏 / Toggle sidebar</td></tr>
+          <tr><td><code>Alt+Shift+F</code></td><td>填充上次内容到当前输入框 / Fill last input</td></tr>
+          <tr><td><code>Alt+Shift+S</code></td><td>保存选中文字为卡片（弹出分类选择）/ Save selection as card</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box">
+        <h3>💡 提示 / Tips</h3>
+        <p>快捷键需要在 <code>chrome://extensions/shortcuts</code> 中确认已正确分配。部分快捷键可能需要手动设置。<br>
+        Check <code>chrome://extensions/shortcuts</code> to verify shortcuts are assigned. Some may need manual setup.</p>
+      </div>
+    </section>
+
     <section id="categories">
       <h2>📁 分类管理 / Category Management</h2>
       
@@ -97,7 +130,7 @@
         <h3>如何添加分类？ / How to Add Category?</h3>
         <ol>
           <li>点击分类栏右侧的 <strong>+</strong> 按钮 | Click the <strong>+</strong> button next to categories</li>
-          <li>输入分类名称（最多5个字符）| Enter category name (max 5 characters)</li>
+          <li>输入分类名称（最多10个字符）| Enter category name (max 10 characters)</li>
           <li>点击确定完成创建 | Click OK to create</li>
         </ol>
       </div>
@@ -170,8 +203,8 @@
         <h3>💡 使用示例 / Example</h3>
         <div class="example">
           <p class="example-label">输入文本 / Input:</p>
-          <code>订单号：{{random_int}}，下单日期：{{date}} {{time}}，编号：{{random_letters_8}}<br>
-          Order No: {{random_int}}, Date: {{date}} {{time}}, ID: {{random_letters_8}}</code>
+          <code>订单号：{{random_int}}，下单日期：{{date}} {{time}}，编号：{{random_letters:8}}<br>
+          Order No: {{random_int}}, Date: {{date}} {{time}}, ID: {{random_letters:8}}</code>
         </div>
         <div class="example">
           <p class="example-label">填充结果 / Output:</p>

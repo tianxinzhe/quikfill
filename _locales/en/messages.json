@@ -2,11 +2,14 @@
   "extensionName": { "message": "QuickFill Assistant" },
   "extensionDescription": { "message": "✨ One-click quick text filling! Support card management, categories, data backup, privacy-first local storage" },
   "cmdToggleDescription": { "message": "Open/Close QuickFill sidebar" },
+  "cmdFillDescription": { "message": "Fill current input with last filled content" },
+  "cmdSaveSelectionDescription": { "message": "Save selected text as card" },
   "actionDefaultTitle": { "message": "QuickFill" },
 
   "btnAddCard": { "message": "Add Card" },
   "btnExport": { "message": "Export" },
   "btnImport": { "message": "Import" },
+  "btnLanguage": { "message": "Language" },
 
   "categoryAll": { "message": "All" },
   "categoryUncategorized": { "message": "Uncategorized" },
@@ -16,8 +19,22 @@
 
   "emptyStateNoCards": { "message": "No cards yet" },
   "emptyStateHint": { "message": "Right-click web text to quickly save" },
+  "emptyStateAddFirst": { "message": "Add your first text" },
+  "emptyStateLearnMore": { "message": "Learn more tips" },
+
+  "onboardingTitle": { "message": "Welcome to QuickFill" },
+  "onboardingSubtitle": { "message": "Make repetitive typing simple" },
+  "onboardingStep1Title": { "message": "Right-click to save" },
+  "onboardingStep1Desc": { "message": "Select text on any webpage, right-click and choose \"Save to QuickFill\"" },
+  "onboardingStep2Title": { "message": "Click to fill" },
+  "onboardingStep2Desc": { "message": "Open the sidebar, click any card to fill it into an input field" },
+  "onboardingStep3Title": { "message": "Organize with categories" },
+  "onboardingStep3Desc": { "message": "Create categories to organize texts, with search and batch operations" },
+  "onboardingStart": { "message": "Get Started" },
+  "onboardingViewHelp": { "message": "View Help" },
 
   "toastClipboardSuccess": { "message": "Copied to clipboard, Ctrl+V to paste" },
+  "toastFillSuccess": { "message": "Filled successfully" },
 
   "promptCategoryName": { "message": "Enter category name (max 10 chars):" },
   "alertCategoryNameTooLong": { "message": "Category name cannot exceed 10 characters" },

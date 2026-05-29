@@ -2,6 +2,8 @@
   "extensionName": { "message": "快填助手" },
   "extensionDescription": { "message": "✨ 一键快速填充文本！支持卡片管理、分类标签、数据备份，纯本地运行保护隐私" },
   "cmdToggleDescription": { "message": "打开/关闭 QuickFill 侧边栏" },
+  "cmdFillDescription": { "message": "使用上次填充的内容填充当前输入框" },
+  "cmdSaveSelectionDescription": { "message": "选中文字后按此快捷键保存为卡片" },
   "actionDefaultTitle": { "message": "QuickFill" },
 
   "btnAddCard": { "message": "添加" },
@@ -19,9 +21,10 @@
   "emptyStateHint": { "message": "右键网页文本可快速收藏" },
 
   "toastClipboardSuccess": { "message": "已写入剪贴板，请 Ctrl+V" },
+  "toastFillSuccess": { "message": "填充成功" },
 
-  "promptCategoryName": { "message": "请输入分类名称（最多5字符）：" },
-  "alertCategoryNameTooLong": { "message": "分类名称不能超过5个字符" },
+  "promptCategoryName": { "message": "请输入分类名称（最多10字符）：" },
+  "alertCategoryNameTooLong": { "message": "分类名称不能超过10个字符" },
   "alertCannotDeleteDefault": { "message": "无法删除默认分类" },
 
   "modalAddTitle": { "message": "添加文本" },

@@ -40,21 +40,19 @@ export function getCurrentLanguage(): string {
 }
 
 export function t(key: string, substitutions?: string | string[]): string {
-  if (currentLang && currentLang !== chrome.i18n.getMessage('@@ui_locale')) {
-    const langData = getLangData(currentLang);
-    if (langData && langData[key]) {
-      let message = langData[key];
-      if (substitutions) {
-        if (Array.isArray(substitutions)) {
-          substitutions.forEach((sub, index) => {
-            message = message.replace(new RegExp(`\\$${index + 1}`, 'g'), sub);
-          });
-        } else {
-          message = message.replace(/\$1/g, substitutions);
-        }
+  const langData = currentLang ? getLangData(currentLang) : null;
+  if (langData && langData[key]) {
+    let message = langData[key];
+    if (substitutions) {
+      if (Array.isArray(substitutions)) {
+        substitutions.forEach((sub, index) => {
+          message = message.replace(new RegExp(`\\$${index + 1}`, 'g'), sub);
+        });
+      } else {
+        message = message.replace(/\$1/g, substitutions);
       }
-      return message;
     }
+    return message;
   }
   return chrome.i18n.getMessage(key, substitutions) || key;
 }
@@ -77,9 +75,21 @@ function getLangData(lang: string): Record<string, string> | null {
         'searchPlaceholder': '搜索文本...',
         'emptyStateNoCards': '暂无文本',
         'emptyStateHint': '右键网页文本可快速收藏',
+        'emptyStateAddFirst': '添加第一条文本',
+        'emptyStateLearnMore': '了解更多使用技巧',
+        'onboardingTitle': '欢迎使用 QuickFill',
+        'onboardingSubtitle': '让重复输入变得简单',
+        'onboardingStep1Title': '右键收藏',
+        'onboardingStep1Desc': '在网页上选中文本，右键选择「收藏到 QuickFill」',
+        'onboardingStep2Title': '点击填充',
+        'onboardingStep2Desc': '打开侧边栏，点击任意卡片即可填充到输入框',
+        'onboardingStep3Title': '分类管理',
+        'onboardingStep3Desc': '创建分类整理文本，支持搜索和批量操作',
+        'onboardingStart': '开始使用',
+        'onboardingViewHelp': '查看帮助',
         'toastClipboardSuccess': '已写入剪贴板，请 Ctrl+V',
-        'promptCategoryName': '请输入分类名称（最多5字符）：',
-        'alertCategoryNameTooLong': '分类名称不能超过5个字符',
+        'promptCategoryName': '请输入分类名称（最多10字符）：',
+        'alertCategoryNameTooLong': '分类名称不能超过10个字符',
         'alertCannotDeleteDefault': '无法删除默认分类',
         'modalAddTitle': '添加文本',
         'modalEditTitle': '编辑文本',
@@ -129,9 +139,21 @@ function getLangData(lang: string): Record<string, string> | null {
         'searchPlaceholder': 'Search text...',
         'emptyStateNoCards': 'No text yet',
         'emptyStateHint': 'Right-click web text to quickly save',
+        'emptyStateAddFirst': 'Add your first text',
+        'emptyStateLearnMore': 'Learn more tips',
+        'onboardingTitle': 'Welcome to QuickFill',
+        'onboardingSubtitle': 'Make repetitive typing simple',
+        'onboardingStep1Title': 'Right-click to save',
+        'onboardingStep1Desc': 'Select text on any webpage, right-click and choose "Save to QuickFill"',
+        'onboardingStep2Title': 'Click to fill',
+        'onboardingStep2Desc': 'Open the sidebar, click any card to fill it into an input field',
+        'onboardingStep3Title': 'Organize with categories',
+        'onboardingStep3Desc': 'Create categories to organize texts, with search and batch operations',
+        'onboardingStart': 'Get Started',
+        'onboardingViewHelp': 'View Help',
         'toastClipboardSuccess': 'Copied to clipboard, Ctrl+V to paste',
-        'promptCategoryName': 'Enter category name (max 5 chars):',
-        'alertCategoryNameTooLong': 'Category name cannot exceed 5 characters',
+        'promptCategoryName': 'Enter category name (max 10 chars):',
+        'alertCategoryNameTooLong': 'Category name cannot exceed 10 characters',
         'alertCannotDeleteDefault': 'Cannot delete default category',
         'modalAddTitle': 'Add Text',
         'modalEditTitle': 'Edit Text',
@@ -180,6 +202,18 @@ function getLangData(lang: string): Record<string, string> | null {
         'searchPlaceholder': 'カード検索...',
         'emptyStateNoCards': 'カードがありません',
         'emptyStateHint': 'Webテキストを右クリックで簡単保存',
+        'emptyStateAddFirst': '最初のカードを追加',
+        'emptyStateLearnMore': '使い方をもっと見る',
+        'onboardingTitle': 'QuickFillへようこそ',
+        'onboardingSubtitle': '繰り返し入力をシンプルに',
+        'onboardingStep1Title': '右クリックで保存',
+        'onboardingStep1Desc': 'Webページのテキストを選択し、右クリックで「QuickFillに保存」を選択',
+        'onboardingStep2Title': 'クリックで入力',
+        'onboardingStep2Desc': 'サイドバーを開き、カードをクリックして入力欄に自動入力',
+        'onboardingStep3Title': '分類で整理',
+        'onboardingStep3Desc': '分類を作成してテキストを整理、検索や一括操作に対応',
+        'onboardingStart': '始める',
+        'onboardingViewHelp': 'ヘルプを見る',
         'toastClipboardSuccess': 'クリップボードにコピー、Ctrl+Vで貼り付け',
         'promptCategoryName': '分類名を入力（最大10文字）：',
         'alertCategoryNameTooLong': '分類名は10文字以内にしてください',
@@ -231,6 +265,18 @@ function getLangData(lang: string): Record<string, string> | null {
         'searchPlaceholder': '카드 검색...',
         'emptyStateNoCards': '카드 없음',
         'emptyStateHint': '웹 텍스트 우클릭으로 빠르게 저장',
+        'emptyStateAddFirst': '첫 번째 카드 추가',
+        'emptyStateLearnMore': '자세히 알아보기',
+        'onboardingTitle': 'QuickFill에 오신 것을 환영합니다',
+        'onboardingSubtitle': '반복적인 입력을 간단하게',
+        'onboardingStep1Title': '우클릭으로 저장',
+        'onboardingStep1Desc': '웹페이지에서 텍스트를 선택하고 우클릭하여 "QuickFill에 저장" 선택',
+        'onboardingStep2Title': '클릭으로 입력',
+        'onboardingStep2Desc': '사이드바를 열고 카드를 클릭하여 입력란에 자동 입력',
+        'onboardingStep3Title': '분류로 정리',
+        'onboardingStep3Desc': '분류를 만들어 텍스트를 정리, 검색 및 일괄 작업 지원',
+        'onboardingStart': '시작하기',
+        'onboardingViewHelp': '도움말 보기',
         'toastClipboardSuccess': '클립보드에 복사됨, Ctrl+V로 붙여넣기',
         'promptCategoryName': '분류 이름 입력 (최대 10자)：',
         'alertCategoryNameTooLong': '분류 이름은 10자를 초과할 수 없습니다',

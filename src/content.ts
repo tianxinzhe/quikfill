@@ -207,5 +207,9 @@ chrome.runtime.onMessage.addListener((request: { action: string; text?: string }
   } else if (request.action === 'showCategoryPicker' && request.text) {
     showCategoryPicker(request.text);
     sendResponse({ success: true });
+  } else if (request.action === 'getSelection') {
+    const selection = window.getSelection();
+    sendResponse({ text: selection ? selection.toString() : '' });
+    return true;
   }
 });
