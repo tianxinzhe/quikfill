@@ -1,6 +1,6 @@
 # QuickFill 隐私政策 / Privacy Policy
 
-最后更新 / Last Updated: 2026-05-28
+最后更新 / Last Updated: 2026-05-29
 
 ## 数据收集 / Data Collection
 
@@ -12,6 +12,8 @@ QuickFill **does not collect any user data**. All data is stored entirely on the
 
 - 文本卡片和分类数据通过 `chrome.storage.local` 存储在本地浏览器中
 - Text cards and category data are stored locally in the browser via `chrome.storage.local`
+- 临时填充文本通过 `chrome.storage.session` 存储（会话结束后自动清除）
+- Temporary fill text is stored via `chrome.storage.session` (cleared after session ends)
 - 导入/导出文件仅保存在用户选择的本地路径
 - Import/export files are only saved to user-selected local paths
 - 不会将任何数据上传至外部服务器
@@ -30,11 +32,11 @@ QuickFill **does not collect any user data**. All data is stored entirely on the
 |---|---|
 | `sidePanel` | 显示侧边栏界面 / Display sidebar UI |
 | `storage` | 存储文本卡片和分类数据 / Store text cards and categories |
-| `activeTab` | 获取当前标签页信息以填充文本 / Get current tab info for text filling |
+| `activeTab` | 获取当前活动标签页以填充文本 / Get active tab for text filling |
 | `contextMenus` | 右键菜单收藏文本 / Right-click menu to save text |
-| `clipboardWrite` | 复制文本到剪贴板 / Copy text to clipboard |
 | `alarms` | 保持扩展服务运行 / Keep extension service running |
-| `tabs` | 打开帮助页面 / Open help page |
+| `tabs` | 查询标签页、发送消息、打开帮助页面 / Query tabs, send messages, open help page |
+| `host_permissions` | 允许内容脚本在所有网站运行 / Allow content script on all websites |
 
 ## 联系方式 / Contact
 
