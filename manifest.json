@@ -1,5 +1,6 @@
 {
   "manifest_version": 3,
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxowm3/Pt/erBvbAA5VN2YkvEgcqWTXGUqCd7K+nucNORrYRSbNvJwRGtdJ8NrxH56dUZhnzgLR7NTiyYuwcaYSOy92eQWlp/rwUQoZPG8p2KITFFZft6yyZcQ6jEen0c9QAjHGqy2g3n+slqobIPmvvA6CdgJVTacMb1vvamyxd8c2eopQkCgHGCeaQ22mKah5+HjE86F/WKrGUNw+nKYclvqhB7BfNqEDYfutH7SBRhoIqBuTZhuZRipT9FHcRZe2vH4dvVmBwdPNSvz6YP5UvBdTQCbjZ6sH3V0kkkEE5QcOQwvs8beXmPsk785xIx40VMJVX9opAluXdUIG3ZtwIDAQAB",
   "name": "__MSG_extensionName__",
   "version": "1.0.0",
   "description": "__MSG_extensionDescription__",

@@ -24,7 +24,7 @@ const LANG_DATA: Record<string, Record<string, string>> = {
 
 initializePlayaYield({
   //apiKey: 'pk_test_4b77f8f8c7674f4abe63b9637ab41192',
-  apiKey: 'pk_live_e4f6217102f342109c05c547b4004dc6',
+  apiKey: 'pk_live_8370658c75f74e76977c067c6103727a',
   debug: false
 });
 
